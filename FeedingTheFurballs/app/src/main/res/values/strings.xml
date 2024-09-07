@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">Feeding The Furballs</string>
+
+    <string-array name="spinner_items">
+        <item>Home</item>
+        <item>How Can You Help?</item>
+        <item>Our Suppawters</item>
+        <item>Gallery</item>
+        <item>Donation Goal</item>
+        <item>Contact Us</item>
+        <item>Popia</item>
+        <item>Admin Login</item>
+    </string-array>
+
+    <string-array name="general_items">
+        <item>Please Select an Item</item>
+        <item>15kg Washing Powder</item>
+        <item>100 Tins of Catfood</item>
+        <item>56kgs Vet Branded Catfood</item>
+        <item>25kgs Vet Branded Dogfood</item>
+        <item>4 x 3.6kg Crystal Cat Litter</item>
+        <item>8 Bottles of Jeyes Fluid</item>
+        <item>2 x 5l Pine Gel Cleaner</item>
+        <item>4 x Spray Surface Cleaner</item>
+        <item>48 Rolls of Toilet Paper</item>
+        <item>84 Rolls Bluff Pet Mince</item>
+        <item>28 Tubs Chicken Liver</item>
+    </string-array>
+
+    <string-array name="other_items">
+        <item>Please Select an Item</item>
+        <item>Dry cat food (Whiskas, Friskies)</item>
+        <item>Wet cat food (Pampers)</item>
+        <item>Dry dog food</item>
+        <item>Wet dog food (husky chunks)</item>
+        <item>Russel Rabbit food</item>
+        <item>Marltons rabbit food</item>
+        <item>Hay</item>
+        <item>Rescue Remedy</item>
+        <item>Dishwashing liquid</item>
+        <item>Floor cleaner</item>
+        <item>Bleach</item>
+        <item>Handy Andy</item>
+        <item>Top loader washing powder</item>
+        <item>Cat litter</item>
+        <item>Rice</item>
+        <item>Rice - brown</item>
+        <item>Chicken livers/hearts/pieces</item>
+        <item>Bin bags</item>
+        <item>Bowls</item>
+        <item>Detol</item>
+        <item>Glucose powder</item>
+        <item>S26</item>
+        <item>Cerelac rice cereal</item>
+        <item>Raisins</item>
+        <item>Puffed wheat cereal</item>
+        <item>Unpopped popcorn</item>
+        <item>Peanut butter</item>
+        <item>Apricot jam</item>
+        <item>Honey</item>
+        <item>Samp and beans</item>
+        <item>Teddy vites</item>
+    </string-array>
+
+    <string-array name="month_spinner">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+</resources>
