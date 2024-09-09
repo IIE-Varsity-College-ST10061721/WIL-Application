@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">Feeding The Furballs</string>
 
-    <string-array name="spinner_items">
+    <string-array name="navigation_spinner">
         <item>Home</item>
         <item>How Can You Help?</item>
         <item>Our Suppawters</item>
         <item>Gallery</item>
         <item>Donation Goal</item>
         <item>Contact Us</item>
-        <item>Popia</item>
+        <item>POPIA</item>
         <item>Admin Login</item>
     </string-array>
 

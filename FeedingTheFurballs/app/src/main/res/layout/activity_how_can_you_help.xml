@@ -7,6 +7,18 @@
     android:background="@android:color/white"
     tools:context=".How_Can_You_Help">
 
+    <View
+        android:id="@+id/rounded_rectangle_view"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:background="@drawable/rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line"
+        app:layout_constraintVertical_bias="0.04" />
+
     <TextView
         android:id="@+id/how_you_can_help_txt"
         android:layout_width="wrap_content"
@@ -36,7 +48,7 @@
 
     <Button
         android:id="@+id/monetary_donations_button"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:text="Monetary Donations"
         android:textSize="20sp"
@@ -45,11 +57,11 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontal_line"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.068" />
 
     <Button
         android:id="@+id/item_donations_button"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:text="Item Donations"
         android:textSize="20sp"
@@ -73,15 +85,16 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:gravity="center"
         android:text="Please use your email address or contact number as the reference so we can contact you to issue receipts."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item_donations_button"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -93,5 +106,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/multidogs" />
+        app:srcCompat="@drawable/dogs2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

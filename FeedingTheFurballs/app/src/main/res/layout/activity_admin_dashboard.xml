@@ -7,6 +7,54 @@
     android:background="@color/white"
     tools:context=".Admin_Dashboard">
 
+    <View
+        android:id="@+id/rounded_rectangle_view"
+        android:layout_width="350dp"
+        android:layout_height="260dp"
+        android:background="@drawable/rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <Button
+        android:id="@+id/manage_item_donations_button"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Manage Item Donations"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/rounded_rectangle_view"
+        app:layout_constraintTop_toBottomOf="@+id/manage_gallery_button"
+        app:layout_constraintVertical_bias="0.063" />
+
+    <Button
+        android:id="@+id/manage_gallery_button"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Manage Gallery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/rounded_rectangle_view"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line"
+        app:layout_constraintVertical_bias="0.063" />
+
+    <Button
+        android:id="@+id/manage_monthly_goal_button"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Manage Monthly Goal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/rounded_rectangle_view"
+        app:layout_constraintTop_toBottomOf="@+id/manage_item_donations_button"
+        app:layout_constraintVertical_bias="0.069" />
+
     <TextView
         android:id="@+id/admin_dashboard_txt"
         android:layout_width="wrap_content"
@@ -33,42 +81,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/admin_dashboard_txt"
         app:layout_constraintVertical_bias="0.02" />
-
-    <Button
-        android:id="@+id/manage_gallery_button"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:text="Manage Gallery"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontal_line"
-        app:layout_constraintVertical_bias="0.1" />
-
-    <Button
-        android:id="@+id/manage_item_donations_button"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:text="Manage Item Donations"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manage_gallery_button"
-        app:layout_constraintVertical_bias="0.086" />
-
-    <Button
-        android:id="@+id/manage_monthly_goal_button"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:text="Manage Monthly Goal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manage_item_donations_button"
-        app:layout_constraintVertical_bias="0.1" />
 
     <ImageView
         android:id="@+id/imageView"

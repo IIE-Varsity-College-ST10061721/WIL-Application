@@ -82,10 +82,15 @@ class Item_Donations : AppCompatActivity() {
 
     // Set up item selected listeners for both spinners
     private fun setupSpinnerListeners() {
-        val itemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        generalItemsSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                val selectedItem = parent?.getItemAtPosition(position).toString()
-                selectedItemField.setText(selectedItem)
+                if (position != 0) {
+                    val selectedItem = parent?.getItemAtPosition(position).toString()
+                    selectedItemField.setText(selectedItem)
+
+                    // Reset the other spinner
+                    otherItemsSpinner.setSelection(0)
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -93,8 +98,21 @@ class Item_Donations : AppCompatActivity() {
             }
         }
 
-        generalItemsSpinner.onItemSelectedListener = itemSelectedListener
-        otherItemsSpinner.onItemSelectedListener = itemSelectedListener
+        otherItemsSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if (position != 0) {
+                    val selectedItem = parent?.getItemAtPosition(position).toString()
+                    selectedItemField.setText(selectedItem)
+
+                    // Reset the general items spinner
+                    generalItemsSpinner.setSelection(0)
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // No action needed
+            }
+        }
     }
 
     // Validate the form fields

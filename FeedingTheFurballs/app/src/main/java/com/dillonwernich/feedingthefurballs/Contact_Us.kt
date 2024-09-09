@@ -22,8 +22,8 @@ class Contact_Us : AppCompatActivity() {
         setContentView(R.layout.activity_contact_us)
 
         // Initialize UI elements
-        facebookButton = findViewById(R.id.facebook_btn)
-        twitterButton = findViewById(R.id.twitter_btn)
+        facebookButton = findViewById(R.id.facebook_button)
+        twitterButton = findViewById(R.id.twitter_button)
         farrahEmail = findViewById(R.id.farrah_email_txt)
         adminEmail = findViewById(R.id.email_details_txt)
         phoneNumber = findViewById(R.id.farrah_number_txt)

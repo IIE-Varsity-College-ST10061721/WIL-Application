@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         // Set up the adapter with the spinner items from resources
         val adapter = ArrayAdapter.createFromResource(
             this,
-            R.array.spinner_items,  // Resource array for spinner items
+            R.array.navigation_spinner,  // Resource array for spinner items
             android.R.layout.simple_spinner_item
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

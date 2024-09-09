@@ -7,6 +7,18 @@
     android:background="@android:color/white"
     tools:context=".Item_Donations">
 
+    <View
+        android:id="@+id/rounded_rectangle_view"
+        android:layout_width="350dp"
+        android:layout_height="490dp"
+        android:background="@drawable/rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line"
+        app:layout_constraintVertical_bias="0.047" />
+
     <TextView
         android:id="@+id/item_donations_txt"
         android:layout_width="wrap_content"
@@ -47,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontal_line"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.03" />
 
     <TextView
         android:id="@+id/other_items_needed_txt"
@@ -62,11 +74,11 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/general_items_spinner"
-        app:layout_constraintVertical_bias="0.031" />
+        app:layout_constraintVertical_bias="0.018" />
 
     <Spinner
         android:id="@+id/general_items_spinner"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:popupBackground="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,7 +90,7 @@
 
     <Spinner
         android:id="@+id/other_items_spinner"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:popupBackground="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -106,7 +118,7 @@
 
     <EditText
         android:id="@+id/name_and_surname"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
@@ -121,7 +133,7 @@
 
     <EditText
         android:id="@+id/your_selected_item"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
@@ -136,7 +148,7 @@
 
     <EditText
         android:id="@+id/contact_number"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
@@ -151,7 +163,7 @@
 
     <EditText
         android:id="@+id/email_address"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
@@ -166,7 +178,7 @@
 
     <Button
         android:id="@+id/send_request_button"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:text="Send Item Donation Request"
         app:layout_constraintBottom_toBottomOf="parent"
