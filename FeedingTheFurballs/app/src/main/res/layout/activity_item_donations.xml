@@ -180,7 +180,7 @@
         android:id="@+id/send_request_button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Send Item Donation Request"
+        android:text="Send Request"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"

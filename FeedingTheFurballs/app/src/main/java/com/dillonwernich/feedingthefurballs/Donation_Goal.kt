@@ -87,7 +87,6 @@ class Donation_Goal : AppCompatActivity() {
                 ContextCompat.getColor(this@Donation_Goal, R.color.light_purple)   // Custom light purple color
             )
             valueTextSize = 12f
-            //valueTextSize.visable=gone
         }
 
         // Create PieData and set it to the PieChart
@@ -98,15 +97,16 @@ class Donation_Goal : AppCompatActivity() {
             setHoleColor(android.R.color.transparent)
             setUsePercentValues(true)
             animateY(1000)
+            description.isEnabled = false  // Disable the description label
             invalidate()  // Refresh the chart
         }
 
         // Display formatted amounts in the TextView
         val detailsText = """
-            Month: $month
-            Monthly Goal: ${currencyFormatter.format(goal)}
-            Total Monthly Donations: ${currencyFormatter.format(donations)}
-        """.trimIndent()
+        Month: $month
+        Monthly Goal: ${currencyFormatter.format(goal)}
+        Total Monthly Donations: ${currencyFormatter.format(donations)}
+    """.trimIndent()
 
         donationsDetails.text = detailsText
     }

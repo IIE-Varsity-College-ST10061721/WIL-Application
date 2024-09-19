@@ -11,6 +11,7 @@ import android.widget.Spinner
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import android.app.AlertDialog
 import java.util.regex.Pattern
 
 class Item_Donations : AppCompatActivity() {
@@ -173,8 +174,9 @@ class Item_Donations : AppCompatActivity() {
         if (requestId != null) {
             database.child("donations").child(requestId).setValue(donationRequest)
                 .addOnSuccessListener {
-                    // Show success message only after data is saved successfully
+                    // Show success message after data is saved successfully
                     Toast.makeText(this, "Request sent successfully!", Toast.LENGTH_SHORT).show()
+                    showConfirmationDialog() // Show confirmation dialog
                     resetFields() // Reset the fields after successful save
                 }
                 .addOnFailureListener {
@@ -182,6 +184,17 @@ class Item_Donations : AppCompatActivity() {
                     Toast.makeText(this, "Failed to send request!", Toast.LENGTH_SHORT).show()
                 }
         }
+    }
+
+    // Show confirmation dialog
+    private fun showConfirmationDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirmation Message")
+        builder.setMessage("Farrah from Feeding The Furballs will be in contact with you shortly.")
+        builder.setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 
     // Reset all fields after the request is sent
