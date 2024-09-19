@@ -87,6 +87,7 @@ class Donation_Goal : AppCompatActivity() {
                 ContextCompat.getColor(this@Donation_Goal, R.color.light_purple)   // Custom light purple color
             )
             valueTextSize = 12f
+            //valueTextSize.visable=gone
         }
 
         // Create PieData and set it to the PieChart

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 class Splash_Screen : AppCompatActivity() {
 
     // Duration for the splash screen (in milliseconds)
-    private val splashScreenDuration: Long = 1000
+    private val splashScreenDuration: Long = 5000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
