@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Manage Gallery"
+        android:text="@string/manage_gallery2"
         android:textColor="@color/dark_purple"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -75,7 +75,7 @@
         android:id="@+id/add_image_button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Add Image"
+        android:text="@string/add_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
@@ -87,7 +87,7 @@
         android:id="@+id/delete_image_button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Delete Image"
+        android:text="@string/delete_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
@@ -105,6 +105,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/delete_image_button"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/multidogs" />
+        app:srcCompat="@drawable/multidogs"
+        android:importantForAccessibility="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,7 +35,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Welcome To Feeding The Furballs"
+        android:text="@string/welcome_to_feeding_the_furballs"
         android:textColor="@color/dark_purple"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -44,21 +44,23 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navigation_spinner"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintVertical_bias="0.058"
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Feeding the Furballs is both a registered public beneficiary and a non-profit organisation that is striving to provide rescue animals and rescue organisations with food and supplies."
+        android:text="@string/feeding_the_furballs_is_both_a_registered_public_beneficiary_and_a_non_profit_organisation_that_is_striving_to_provide_rescue_animals_and_rescue_organisations_with_food_and_supplies"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.018" />
+        app:layout_constraintVertical_bias="0.018"
+        tools:ignore="TextSizeCheck" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -71,14 +73,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.108"
-        app:srcCompat="@drawable/cat" />
+        app:srcCompat="@drawable/cat"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/our_mission"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Our Mission"
+        android:text="@string/our_mission"
         android:textColor="@color/dark_purple"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -94,13 +97,14 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Our mission is to better the world through kindness to animals by assisting rescuers with food and supplies, allowing them to focus on their rescue work. We aim to inspire others to adopt rather than shop, network animals in need of forever homes, and encourage everyone to help furballs in need."
+        android:text="@string/our_mission_is_to_better_the_world_through_kindness_to_animals_by_assisting_rescuers_with_food_and_supplies_allowing_them_to_focus_on_their_rescue_work_we_aim_to_inspire_others_to_adopt_rather_than_shop_network_animals_in_need_of_forever_homes_and_encourage_everyone_to_help_furballs_in_need"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/our_mission"
-        app:layout_constraintVertical_bias="0.173" />
+        app:layout_constraintVertical_bias="0.173"
+        tools:ignore="TextSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

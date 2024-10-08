@@ -1,6 +1,8 @@
 package com.dillonwernich.feedingthefurballs
 
+import android.content.Context
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -61,17 +63,21 @@ class Admin_Donation_Goal : AppCompatActivity() {
 
         // Validate monthly donations field
         if (monthlyDonations.isEmpty()) {
-            totalMonthlyDonations.error = "Please enter the total monthly donations"
+            totalMonthlyDonations.error = "Please enter the total monthly donations!"
             totalMonthlyDonations.requestFocus()
             return
         }
 
         // Validate monthly goal field
         if (monthlyGoal.isEmpty()) {
-            totalMonthlyGoal.error = "Please enter the monthly goal"
+            totalMonthlyGoal.error = "Please enter the monthly goal!"
             totalMonthlyGoal.requestFocus()
             return
         }
+
+        // Hide the keyboard
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(saveButton.windowToken, 0)
 
         // If all validations pass, save data to Firebase
         val data = mapOf(
@@ -84,13 +90,13 @@ class Admin_Donation_Goal : AppCompatActivity() {
         database.child("donation_goals").child(month).setValue(data)
             .addOnSuccessListener {
                 // Show success message and clear input fields
-                Toast.makeText(applicationContext, "Data saved successfully!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Goals uploaded successfully!", Toast.LENGTH_SHORT).show()
                 totalMonthlyDonations.text.clear()
                 totalMonthlyGoal.text.clear()
             }
             .addOnFailureListener {
                 // Show failure message if saving fails
-                Toast.makeText(applicationContext, "Failed to save data!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Failed to upload goals!", Toast.LENGTH_SHORT).show()
             }
     }
 }

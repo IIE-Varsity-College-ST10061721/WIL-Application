@@ -65,7 +65,7 @@ class Admin_Gallery : AppCompatActivity() {
             selectedImageName?.let {
                 showProgressDialog("Deleting image...")
                 deleteImageFromFirebase(it)
-            } ?: Toast.makeText(this, "No image selected to delete", Toast.LENGTH_SHORT).show()
+            } ?: Toast.makeText(this, "No image selected to delete!", Toast.LENGTH_SHORT).show()
         }
 
         // Fetch available image names from Firebase
@@ -99,16 +99,25 @@ class Admin_Gallery : AppCompatActivity() {
                 selectedImageUri = imageUri
                 imageView.setImageURI(imageUri)
 
+                // Extract filename from URI
+                val cursor = contentResolver.query(imageUri, null, null, null, null)
+                cursor?.let {
+                    if (it.moveToFirst()) {
+                        val displayNameIndex = it.getColumnIndex(MediaStore.Images.Media.DISPLAY_NAME)
+                        selectedImageName = it.getString(displayNameIndex)
+                    }
+                    it.close()
+                }
+
                 // Automatically upload the image after selection
                 showProgressDialog("Uploading image...")
-                uploadImageToFirebase(imageUri)
-            } ?: Toast.makeText(this, "Failed to get image from gallery", Toast.LENGTH_SHORT).show()
+                uploadImageToFirebase(imageUri, selectedImageName ?: UUID.randomUUID().toString())
+            } ?: Toast.makeText(this, "Failed to get image from gallery!", Toast.LENGTH_SHORT).show()
         }
     }
 
     // Function to upload selected image to Firebase
-    private fun uploadImageToFirebase(imageUri: Uri) {
-        val fileName = UUID.randomUUID().toString()
+    private fun uploadImageToFirebase(imageUri: Uri, fileName: String) {
         val ref = storageReference.child("images/$fileName")
 
         ref.putFile(imageUri)

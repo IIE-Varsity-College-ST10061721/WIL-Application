@@ -17,7 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.419"
-        app:srcCompat="@drawable/ftflogo" />
+        app:srcCompat="@drawable/ftflogo"
+        android:importantForAccessibility="no" />
 
     <View
         android:id="@+id/rectangle"
@@ -36,10 +37,11 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="© Feeding the Furballs 2016 PBO 930048463 and NPO 134-861"
+        android:text="@string/feeding_the_furballs_2016_pbo_930048463_and_npo_134_861"
         android:textColor="@color/dark_purple"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/rectangle"
-        app:layout_constraintTop_toTopOf="@+id/rectangle" />
+        app:layout_constraintTop_toTopOf="@+id/rectangle"
+        tools:ignore="TextSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

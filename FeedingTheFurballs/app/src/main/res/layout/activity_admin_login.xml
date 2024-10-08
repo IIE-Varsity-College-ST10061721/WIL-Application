@@ -23,7 +23,7 @@
         android:id="@+id/admin_login_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Admin Login"
+        android:text="@string/admin_login"
         android:textColor="@color/dark_purple"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -53,13 +53,14 @@
         app:layout_constraintStart_toStartOf="@+id/rounded_rectangle_view"
         app:layout_constraintTop_toBottomOf="@+id/horizontal_line"
         app:layout_constraintVertical_bias="0.087"
-        app:srcCompat="@drawable/ftflogo2" />
+        app:srcCompat="@drawable/ftflogo2"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please Enter Your Admin Credentials!"
+        android:text="@string/please_enter_your_admin_credentials"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
         app:layout_constraintHorizontal_bias="0.605"
@@ -73,13 +74,15 @@
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Email Address"
+        android:hint="@string/email_address2"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
         app:layout_constraintStart_toStartOf="@+id/rounded_rectangle_view"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintVertical_bias="0.025"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/admin_password"
@@ -87,19 +90,21 @@
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
         app:layout_constraintStart_toStartOf="@+id/rounded_rectangle_view"
         app:layout_constraintTop_toBottomOf="@+id/admin_email_address"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Login"
+        android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
         app:layout_constraintStart_toStartOf="@+id/rounded_rectangle_view"
@@ -116,6 +121,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_button"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/pugandcat" />
+        app:srcCompat="@drawable/pugandcat"
+        android:importantForAccessibility="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

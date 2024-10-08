@@ -23,7 +23,7 @@
         android:id="@+id/manage_item_donations_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Manage Item Donations"
+        android:text="@string/manage_item_donations2"
         android:textColor="@color/dark_purple"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -65,7 +65,7 @@
         android:clickable="false"
         android:ems="10"
         android:focusable="false"
-        android:hint="Item"
+        android:hint="@string/item"
         android:inputType="text"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,7 +84,7 @@
         android:clickable="false"
         android:ems="10"
         android:focusable="false"
-        android:hint="Contact Number"
+        android:hint="@string/contact_number"
         android:inputType="phone"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,7 +103,7 @@
         android:clickable="false"
         android:ems="10"
         android:focusable="false"
-        android:hint="Email Address"
+        android:hint="@string/email_address"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,7 +118,7 @@
         android:id="@+id/delete_item_donation_button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Delete Item Donation"
+        android:text="@string/delete_item_donation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -136,6 +136,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/delete_item_donation_button"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/multidogs" />
+        app:srcCompat="@drawable/multidogs"
+        android:importantForAccessibility="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

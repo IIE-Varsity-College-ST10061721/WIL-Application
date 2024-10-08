@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="How You Can Help"
+        android:text="@string/how_you_can_help"
         android:textColor="@color/dark_purple"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -62,7 +62,7 @@
         android:id="@+id/monetary_donations_button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Monetary Donations"
+        android:text="@string/monetary_donations"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +75,7 @@
         android:id="@+id/item_donations_button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Item Donations"
+        android:text="@string/item_donations"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,26 +89,28 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Please use your email address or contact number as the reference so we can contact you to issue receipts."
+        android:text="@string/please_use_your_email_address_or_contact_number_as_the_reference_so_we_can_contact_you_to_issue_receipts"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/monetary_donations_button"
-        app:layout_constraintVertical_bias="0.015" />
+        app:layout_constraintVertical_bias="0.015"
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="If you'd like to donate an item, please fill out the 'Item Donations' form. Farrah will arrange collection or drop-off. Your information will remain confidential."
+        android:text="@string/if_you_d_like_to_donate_an_item_please_fill_out_the_item_donations_form_farrah_will_arrange_collection_or_drop_off_your_information_will_remain_confidential"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item_donations_button"
-        app:layout_constraintVertical_bias="0.032" />
+        app:layout_constraintVertical_bias="0.032"
+        tools:ignore="TextSizeCheck" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -120,5 +122,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/dogs2" />
+        app:srcCompat="@drawable/dogs2"
+        android:importantForAccessibility="no" />
 </androidx.constraintlayout.widget.ConstraintLayout>

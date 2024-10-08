@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Item Donations"
+        android:text="@string/item_donations2"
         android:textColor="@color/dark_purple"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -50,7 +50,7 @@
         android:id="@+id/general_items_needed_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="General Items Needed"
+        android:text="@string/general_items_needed"
         android:textColor="@color/dark_purple"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -65,7 +65,7 @@
         android:id="@+id/other_items_needed_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Other Items Needed"
+        android:text="@string/other_items_needed"
         android:textColor="@color/dark_purple"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -105,7 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Your Details"
+        android:text="@string/your_details"
         android:textColor="@color/dark_purple"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -122,14 +122,16 @@
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Name and Surname"
+        android:hint="@string/name_and_surname"
+        android:importantForAutofill="no"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/your_details"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/your_selected_item"
@@ -137,14 +139,16 @@
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Your Selected Item"
+        android:hint="@string/your_selected_item"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_and_surname"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/contact_number"
@@ -152,14 +156,16 @@
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Contact Number"
+        android:hint="@string/contact_number2"
+        android:importantForAutofill="no"
         android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/your_selected_item"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/email_address"
@@ -167,20 +173,22 @@
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Email Address"
+        android:hint="@string/email_address3"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contact_number"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/send_request_button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Send Request"
+        android:text="@string/send_request"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -196,6 +204,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/send_request_button"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/labdog" />
+        app:srcCompat="@drawable/labdog"
+        android:importantForAccessibility="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

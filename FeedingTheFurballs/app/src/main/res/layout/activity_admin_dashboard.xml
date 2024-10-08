@@ -23,7 +23,7 @@
         android:id="@+id/manage_item_donations_button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Manage Item Donations"
+        android:text="@string/manage_item_donations"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
         app:layout_constraintHorizontal_bias="0.52"
@@ -35,7 +35,7 @@
         android:id="@+id/manage_gallery_button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Manage Gallery"
+        android:text="@string/manage_gallery"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
         app:layout_constraintHorizontal_bias="0.52"
@@ -47,7 +47,7 @@
         android:id="@+id/manage_monthly_goal_button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Manage Monthly Goal"
+        android:text="@string/manage_monthly_goal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
         app:layout_constraintHorizontal_bias="0.52"
@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Admin Dashboard"
+        android:text="@string/admin_dashboard"
         android:textColor="@color/dark_purple"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -92,6 +92,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/manage_monthly_goal_button"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/multidogs" />
+        app:srcCompat="@drawable/multidogs"
+        android:importantForAccessibility="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
