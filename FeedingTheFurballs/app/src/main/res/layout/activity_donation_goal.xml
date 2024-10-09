@@ -55,7 +55,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/month_spinner"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <Spinner
+        android:id="@+id/month_spinner"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/donations_pieChart"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintVertical_bias="0.109" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

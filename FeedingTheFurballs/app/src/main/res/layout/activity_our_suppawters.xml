@@ -122,13 +122,14 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@android:color/transparent"
+        android:importantForAccessibility="no"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/rectangle1"
-        app:layout_constraintVertical_bias="0.466"
+        app:layout_constraintVertical_bias="0.533"
         app:srcCompat="@drawable/facebook"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -137,14 +138,30 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@android:color/transparent"
+        android:importantForAccessibility="no"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toEndOf="@+id/facebook_button"
         app:layout_constraintTop_toTopOf="@+id/rectangle1"
-        app:layout_constraintVertical_bias="0.466"
+        app:layout_constraintVertical_bias="0.533"
         app:srcCompat="@drawable/twitter"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/tiktok_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle1"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toEndOf="@+id/twitter_button"
+        app:layout_constraintTop_toTopOf="@+id/rectangle1"
+        app:layout_constraintVertical_bias="0.533"
+        app:srcCompat="@drawable/tiktok"
+        android:importantForAccessibility="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

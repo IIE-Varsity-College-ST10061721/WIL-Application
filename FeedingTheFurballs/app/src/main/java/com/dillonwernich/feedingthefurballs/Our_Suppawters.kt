@@ -11,6 +11,7 @@ class Our_Suppawters : AppCompatActivity() {
     // Declare UI elements for social media buttons
     private lateinit var facebookButton: ImageButton
     private lateinit var twitterButton: ImageButton
+    private lateinit var tiktokButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +20,7 @@ class Our_Suppawters : AppCompatActivity() {
         // Initialize buttons
         facebookButton = findViewById(R.id.facebook_button)
         twitterButton = findViewById(R.id.twitter_button)
+        tiktokButton = findViewById(R.id.tiktok_button)
 
         // Set up click listener for the Facebook button
         facebookButton.setOnClickListener {
@@ -28,6 +30,11 @@ class Our_Suppawters : AppCompatActivity() {
         // Set up click listener for the Twitter button
         twitterButton.setOnClickListener {
             openUrl("https://x.com/i/flow/login?redirect_after_login=%2FFeedTheFurballs")  // Open Twitter link
+        }
+
+        // Set up click listener for the TikTok button
+        tiktokButton.setOnClickListener {
+            openUrl("https://www.tiktok.com/@farrahmaharajh") //Open TikTok link
         }
     }
 

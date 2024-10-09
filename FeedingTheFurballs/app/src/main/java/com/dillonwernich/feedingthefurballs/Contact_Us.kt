@@ -12,10 +12,10 @@ class Contact_Us : AppCompatActivity() {
     // Declare UI elements for social media buttons and contact details
     private lateinit var facebookButton: ImageButton
     private lateinit var twitterButton: ImageButton
+    private lateinit var tiktokButton: ImageButton
     private lateinit var farrahEmail: TextView
     private lateinit var adminEmail: TextView
     private lateinit var phoneNumber: TextView
-    private lateinit var address: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +24,10 @@ class Contact_Us : AppCompatActivity() {
         // Initialize UI elements
         facebookButton = findViewById(R.id.facebook_button)
         twitterButton = findViewById(R.id.twitter_button)
+        tiktokButton = findViewById(R.id.tiktok_button)
         farrahEmail = findViewById(R.id.farrah_email_txt)
         adminEmail = findViewById(R.id.email_details_txt)
         phoneNumber = findViewById(R.id.farrah_number_txt)
-        address = findViewById(R.id.address_details_txt)
 
         // Set up listeners for social media buttons
         facebookButton.setOnClickListener {
@@ -38,7 +38,11 @@ class Contact_Us : AppCompatActivity() {
             openUrl("https://x.com/i/flow/login?redirect_after_login=%2FFeedTheFurballs")
         }
 
-        // Set up listeners for emails, phone number, and address clicks
+        tiktokButton.setOnClickListener {
+            openUrl("https://www.tiktok.com/@farrahmaharajh")
+        }
+
+        // Set up listeners for emails, phone number clicks
         farrahEmail.setOnClickListener {
             sendEmail("farrah@feedingthefurballs.org")
         }
@@ -49,10 +53,6 @@ class Contact_Us : AppCompatActivity() {
 
         phoneNumber.setOnClickListener {
             callPhoneNumber("+27837936897")
-        }
-
-        address.setOnClickListener {
-            openMap("26 Parthab Road, Avoca, Durban North, 4051")
         }
     }
 
@@ -73,12 +73,6 @@ class Contact_Us : AppCompatActivity() {
     // Function to open the dialer with a predefined phone number
     private fun callPhoneNumber(number: String) {
         val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number"))
-        startActivity(intent)
-    }
-
-    // Function to open a map application with a predefined address
-    private fun openMap(address: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=$address"))
         startActivity(intent)
     }
 }

@@ -2,6 +2,10 @@ package com.dillonwernich.feedingthefurballs
 
 import android.app.ProgressDialog
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -20,6 +24,7 @@ class Donation_Goal : AppCompatActivity() {
     private lateinit var donationsDetails: TextView
     private lateinit var database: DatabaseReference
     private lateinit var progressDialog: ProgressDialog
+    private lateinit var monthSpinner: Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,28 +33,56 @@ class Donation_Goal : AppCompatActivity() {
         // Initialize UI elements
         donationsPieChart = findViewById(R.id.donations_pieChart)
         donationsDetails = findViewById(R.id.donation_details_textView)
+        monthSpinner = findViewById(R.id.month_spinner)
 
         // Initialize progress dialog
         progressDialog = ProgressDialog(this).apply {
-            setMessage("Processing...")
+            setMessage("Loading data...")
             setCancelable(false)
         }
 
-        // Get current month
-        val currentMonth = SimpleDateFormat("MMMM", Locale.getDefault()).format(Date())
+        // Initialize Firebase Database reference
+        database = FirebaseDatabase.getInstance().reference.child("donation_goals")
 
-        // Initialize Firebase Database reference for the current month
-        database = FirebaseDatabase.getInstance().reference.child("donation_goals").child(currentMonth)
+        // Populate the spinner with the months from the string array
+        val months = resources.getStringArray(R.array.month_spinner)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, months)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        monthSpinner.adapter = adapter
 
-        // Show the progress dialog while loading data
-        progressDialog.show()
+        // Auto-select the current month in the spinner
+        selectCurrentMonth(months)
 
-        // Load donation data for the current month
-        loadDonationData(currentMonth)
+        // Set spinner item selected listener
+        monthSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val selectedMonth = months[position]
+                loadDonationData(selectedMonth)
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // No action needed
+            }
+        }
     }
 
-    private fun loadDonationData(currentMonth: String) {
-        database.addValueEventListener(object : ValueEventListener {
+    // Select the current month in the Spinner
+    private fun selectCurrentMonth(months: Array<String>) {
+        // Get the current month name (e.g., "October")
+        val currentMonth = SimpleDateFormat("MMMM", Locale.getDefault()).format(Date())
+        val monthIndex = months.indexOf(currentMonth)
+
+        if (monthIndex >= 0) {
+            // Set the spinner to the current month
+            monthSpinner.setSelection(monthIndex)
+        }
+    }
+
+    // Load donation data for the selected month
+    private fun loadDonationData(selectedMonth: String) {
+        progressDialog.show()
+
+        database.child(selectedMonth).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 progressDialog.dismiss()
 
@@ -57,9 +90,11 @@ class Donation_Goal : AppCompatActivity() {
                     val monthlyGoal = snapshot.child("monthly_goal").getValue(String::class.java)?.toIntOrNull() ?: 0
                     val monthlyDonations = snapshot.child("monthly_donations").getValue(String::class.java)?.toIntOrNull() ?: 0
 
-                    updateUI(monthlyGoal, monthlyDonations, currentMonth)
+                    updateUI(monthlyGoal, monthlyDonations, selectedMonth)
                 } else {
-                    donationsDetails.text = "No data found for $currentMonth"
+                    // Display message when no data is found for the selected month
+                    donationsDetails.text = "No data found for $selectedMonth"
+                    donationsPieChart.clear()  // Clear the pie chart if no data
                 }
             }
 
@@ -70,6 +105,7 @@ class Donation_Goal : AppCompatActivity() {
         })
     }
 
+    // Update UI with fetched donation data
     private fun updateUI(goal: Int, donations: Int, month: String) {
         // Format amounts as South African Rand (ZAR)
         val currencyFormatter = NumberFormat.getCurrencyInstance(Locale("en", "ZA"))
@@ -106,7 +142,7 @@ class Donation_Goal : AppCompatActivity() {
         Month: $month
         Monthly Goal: ${currencyFormatter.format(goal)}
         Total Monthly Donations: ${currencyFormatter.format(donations)}
-    """.trimIndent()
+        """.trimIndent()
 
         donationsDetails.text = detailsText
     }
