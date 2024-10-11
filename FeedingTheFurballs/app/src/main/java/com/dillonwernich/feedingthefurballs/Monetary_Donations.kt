@@ -10,7 +10,6 @@ class Monetary_Donations : AppCompatActivity() {
 
     // Declare buttons for different donation methods
     private lateinit var debitOrderFormButton: Button
-    private lateinit var paypalButton: Button
     private lateinit var zapperButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,16 +18,11 @@ class Monetary_Donations : AppCompatActivity() {
 
         // Initialize buttons
         debitOrderFormButton = findViewById(R.id.debit_order_form_button)
-        paypalButton = findViewById(R.id.paypal_button)
         zapperButton = findViewById(R.id.zapper_button)
 
         // Set up click listeners for each button
         debitOrderFormButton.setOnClickListener {
             openUrl("https://www.feedingthefurballs.org/payment-mandate.php")  // Open the debit order form link
-        }
-
-        paypalButton.setOnClickListener {
-            openUrl("https://www.paypal.com/donate?token=tTC-qDY-__xYc3M0QnigNGXfrQDswbUUTd6Zx10x4IEjkTLUHsHVstdq9y0MKQULk9LUXHczrxbvPG6U")  // Open the PayPal donation link
         }
 
         zapperButton.setOnClickListener {
