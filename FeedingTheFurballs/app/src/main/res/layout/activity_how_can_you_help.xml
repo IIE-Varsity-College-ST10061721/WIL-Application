@@ -10,26 +10,26 @@
     <View
         android:id="@+id/rounded_rectangle_view"
         android:layout_width="350dp"
-        android:layout_height="160dp"
+        android:layout_height="140dp"
         android:background="@drawable/rectangle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontal_line"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <View
         android:id="@+id/rounded_rectangle_view2"
         android:layout_width="350dp"
-        android:layout_height="180dp"
+        android:layout_height="160dp"
         android:background="@drawable/rectangle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rounded_rectangle_view"
-        app:layout_constraintVertical_bias="0.097" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <TextView
         android:id="@+id/how_you_can_help_txt"
@@ -65,11 +65,10 @@
         android:text="@string/monetary_donations"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
+        app:layout_constraintStart_toStartOf="@+id/rounded_rectangle_view"
         app:layout_constraintTop_toTopOf="@+id/rounded_rectangle_view"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.025" />
 
     <Button
         android:id="@+id/item_donations_button"
@@ -78,11 +77,10 @@
         android:text="@string/item_donations"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view2"
+        app:layout_constraintStart_toStartOf="@+id/rounded_rectangle_view2"
         app:layout_constraintTop_toTopOf="@+id/rounded_rectangle_view2"
-        app:layout_constraintVertical_bias="0.061" />
+        app:layout_constraintVertical_bias="0.04" />
 
     <TextView
         android:id="@+id/textView"
@@ -91,11 +89,10 @@
         android:gravity="center"
         android:text="@string/please_use_your_email_address_or_contact_number_as_the_reference_so_we_can_contact_you_to_issue_receipts"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
+        app:layout_constraintStart_toStartOf="@+id/rounded_rectangle_view"
         app:layout_constraintTop_toBottomOf="@+id/monetary_donations_button"
-        app:layout_constraintVertical_bias="0.015"
+        app:layout_constraintVertical_bias="0.023"
         tools:ignore="TextSizeCheck" />
 
     <TextView
@@ -105,9 +102,9 @@
         android:gravity="center"
         android:text="@string/if_you_d_like_to_donate_an_item_please_fill_out_the_item_donations_form_farrah_will_arrange_collection_or_drop_off_your_information_will_remain_confidential"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view2"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rounded_rectangle_view2"
         app:layout_constraintTop_toBottomOf="@+id/item_donations_button"
         app:layout_constraintVertical_bias="0.032"
         tools:ignore="TextSizeCheck" />
@@ -116,12 +113,12 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/rounded_rectangle_view2"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/dogs2"
-        android:importantForAccessibility="no" />
+        app:srcCompat="@drawable/dogs2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
     <string name="total_monthly_donations">Total Monthly Donations</string>
     <string name="total_monthly_goal">Total Monthly Goal</string>
     <string name="save">Save</string>
-    <string name="please_select_a_month">Please Select a Month.</string>
+    <string name="please_select_a_month">Please Select a month.</string>
     <string name="manage_gallery2">Manage Gallery</string>
     <string name="add_image">Add Image</string>
     <string name="delete_image">Delete Image</string>
@@ -62,6 +62,9 @@
     <string name="paypal">PayPal</string>
     <string name="zapper">Zapper</string>
     <string name="feeding_the_furballs_2016_pbo_930048463_and_npo_134_861">© Feeding the Furballs 2016 PBO 930048463 and NPO 134-861</string>
+    <string name="please_select_a_user">Please select a user.</string>
+    <string name="please_select_a_month2">Please select a month.</string>
+    <string name="our_suppawters">Our Suppawters</string>
 
     <string-array name="navigation_spinner">
         <item>Home</item>
