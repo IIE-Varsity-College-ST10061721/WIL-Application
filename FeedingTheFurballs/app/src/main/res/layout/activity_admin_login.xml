@@ -53,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="@+id/rounded_rectangle_view"
         app:layout_constraintStart_toStartOf="@+id/rounded_rectangle_view"
         app:layout_constraintTop_toTopOf="@+id/rounded_rectangle_view"
-        app:layout_constraintVertical_bias="0.027"
+        app:layout_constraintVertical_bias="0.033"
         app:srcCompat="@drawable/ftflogo2" />
 
     <TextView
