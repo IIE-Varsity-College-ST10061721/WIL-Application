@@ -12,6 +12,7 @@ import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import android.app.AlertDialog
+import androidx.appcompat.app.AppCompatDelegate
 import java.util.regex.Pattern
 
 class Item_Donations : AppCompatActivity() {
@@ -30,6 +31,10 @@ class Item_Donations : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Force light mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         setContentView(R.layout.activity_item_donations)
 
         // Initialize Firebase database reference

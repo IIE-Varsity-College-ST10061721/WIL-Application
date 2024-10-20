@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Force light mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         setContentView(R.layout.activity_main)
 
         // Initialize the spinner
@@ -34,16 +39,21 @@ class MainActivity : AppCompatActivity() {
 
         // Set the listener for item selection
         selectSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                when (position) {
-                    1 -> navigateToActivity(How_Can_You_Help::class.java)  // Navigate to "How Can You Help"
-                    2 -> navigateToActivity(Our_Suppawters::class.java)    // Navigate to "Our Suppawters"
-                    3 -> navigateToActivity(Gallery::class.java)           // Navigate to "Gallery"
-                    4 -> navigateToActivity(Donation_Goal::class.java)     // Navigate to "Donation Goal"
-                    5 -> navigateToActivity(Contact_Us::class.java)        // Navigate to "Contact Us"
-                    6 -> openBrowserWithUrl("https://popia.co.za/")        // Open a URL in the browser
-                    7 -> navigateToActivity(Admin_Login::class.java)       // Navigate to "Admin Login"
-                    else -> Log.d("MainActivity", "No valid selection made!")  // Log for no valid selection
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                // Ensure 'view' is not null before proceeding
+                if (view != null) {
+                    when (position) {
+                        1 -> navigateToActivity(How_Can_You_Help::class.java)  // Navigate to "How Can You Help"
+                        2 -> navigateToActivity(Our_Suppawters::class.java)    // Navigate to "Our Suppawters"
+                        3 -> navigateToActivity(Gallery::class.java)           // Navigate to "Gallery"
+                        4 -> navigateToActivity(Donation_Goal::class.java)     // Navigate to "Donation Goal"
+                        5 -> navigateToActivity(Contact_Us::class.java)        // Navigate to "Contact Us"
+                        6 -> openBrowserWithUrl("https://popia.co.za/")        // Open a URL in the browser
+                        7 -> navigateToActivity(Admin_Login::class.java)       // Navigate to "Admin Login"
+                        else -> Log.d("MainActivity", "No valid selection made!")  // Log for no valid selection
+                    }
+                } else {
+                    Log.d("MainActivity", "View is null")
                 }
             }
 

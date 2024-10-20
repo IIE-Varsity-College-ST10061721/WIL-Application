@@ -1,10 +1,12 @@
 package com.dillonwernich.feedingthefurballs
 
 import android.app.Dialog
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.bumptech.glide.Glide
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -17,9 +19,22 @@ class Gallery : AppCompatActivity() {
     // Firebase storage reference to the "images" folder
     private val storageReference: StorageReference = FirebaseStorage.getInstance().reference.child("images")
 
+    // Declare the progress dialog
+    private lateinit var progressDialog: ProgressDialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Force light mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         setContentView(R.layout.activity_gallery)
+
+        // Initialize the progress dialog
+        progressDialog = ProgressDialog(this).apply {
+            setMessage("Loading images...")
+            setCancelable(false)
+        }
 
         // Initialize all ImageViews by referencing them from the layout
         imageViews = arrayOf(
@@ -73,6 +88,9 @@ class Gallery : AppCompatActivity() {
             findViewById(R.id.gallery48)
         )
 
+        // Show the progress dialog
+        progressDialog.show()
+
         // Load the images from Firebase storage into the ImageViews
         loadImages()
 
@@ -112,9 +130,13 @@ class Gallery : AppCompatActivity() {
                             // Handle image loading failure
                         }
                 }
+
+                // Dismiss the progress dialog once the images are loaded
+                progressDialog.dismiss()
             }
             .addOnFailureListener {
                 // Handle Firebase storage listing failure
+                progressDialog.dismiss()  // Dismiss the progress dialog in case of failure
             }
     }
 
