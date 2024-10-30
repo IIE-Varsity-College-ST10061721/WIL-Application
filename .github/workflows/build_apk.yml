@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
-          java-version: '17'  # Java version required for your project
+          java-version: '17'  # Use Java 17
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
@@ -29,16 +29,13 @@ jobs:
           api-level: 34
           build-tools: '34.0.0'
 
-      # Make gradlew executable
       - name: Make gradlew executable
-        run: chmod +x Application/FeedingTheFurballs/gradlew
+        run: chmod +x Application/FeedingTheFurballs/gradlew  # Adjusted path
 
-      # Build the APK
       - name: Build APK
-        working-directory: Application/FeedingTheFurballs  # Set the correct directory
+        working-directory: Application/FeedingTheFurballs  # Specify correct working directory
         run: ./gradlew assembleRelease
 
-      # Upload the APK as an artifact
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
