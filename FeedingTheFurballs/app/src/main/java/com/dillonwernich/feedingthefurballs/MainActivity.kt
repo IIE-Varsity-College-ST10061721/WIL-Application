@@ -2,14 +2,13 @@ package com.dillonwernich.feedingthefurballs
 
 // Import necessary Android components and libraries
 import android.content.Intent            // Used to create and launch new activities
-import android.net.Uri                  // Used for handling URIs (like URLs for browser)
 import android.os.Bundle                 // Bundle is used to pass data between activities
-import android.util.Log                 // Used for logging debug messages
-import android.view.View                // View class handles the UI elements
-import android.widget.AdapterView        // AdapterView is a parent class for Spinner
-import android.widget.ArrayAdapter       // ArrayAdapter connects data to a Spinner view
-import android.widget.Spinner            // Spinner is a dropdown UI element
-import android.widget.Toast              // Toast is used to display brief messages on the screen
+import android.util.Log                  // Used for logging debug messages
+import android.view.View                 // View class handles the UI elements
+import android.widget.AdapterView         // AdapterView is a parent class for Spinner
+import android.widget.ArrayAdapter        // ArrayAdapter connects data to a Spinner view
+import android.widget.Spinner             // Spinner is a dropdown UI element
+import android.widget.Toast               // Toast is used to display brief messages on the screen
 import androidx.appcompat.app.AppCompatActivity  // Base class for activities using ActionBar
 import androidx.appcompat.app.AppCompatDelegate  // Used to control the day/night mode
 
@@ -63,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                         3 -> navigateToActivity(Gallery::class.java)           // Go to "Gallery" screen
                         4 -> navigateToActivity(Donation_Goal::class.java)     // Go to "Donation Goal" screen
                         5 -> navigateToActivity(Contact_Us::class.java)        // Go to "Contact Us" screen
-                        6 -> openBrowserWithUrl("https://popia.co.za/")        // Open the POPIA website in the browser
+                        6 -> navigateToActivity(Disclaimer::class.java)        // Go to "Disclaimer" screen
                         7 -> navigateToActivity(Admin_Login::class.java)       // Go to "Admin Login" screen
                         else -> Log.d("MainActivity", "No valid selection made!")  // Log message for invalid selection
                     }
@@ -93,21 +92,6 @@ class MainActivity : AppCompatActivity() {
             // If something goes wrong (like activity not found), display a toast message
             // Toast messages provide brief feedback to users for errors or successes
             Toast.makeText(this, "Failed to open activity!", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    // Helper function to open a URL in the default browser
-    // This method provides external web access for users, such as opening the POPIA website
-    private fun openBrowserWithUrl(url: String) {
-        try {
-            // Create an Intent to view the given URL in a browser
-            // This uses an implicit intent to ask the system to open a web browser
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-            startActivity(browserIntent)  // Start the browser activity with the given URL
-        } catch (e: Exception) {
-            // Handle exceptions, like if the browser fails to open
-            // The try-catch block ensures that any failure is gracefully handled with a message to the user
-            Toast.makeText(this, "Failed to open URL!", Toast.LENGTH_SHORT).show()
         }
     }
 

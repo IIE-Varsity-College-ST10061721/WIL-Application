@@ -61,10 +61,24 @@
     <string name="debit_order_form">Debit Order Form</string>
     <string name="paypal">PayPal</string>
     <string name="zapper">Zapper</string>
-    <string name="feeding_the_furballs_2016_pbo_930048463_and_npo_134_861">© Feeding the Furballs 2016 PBO 930048463 and NPO 134-861</string>
+    <string name="feeding_the_furballs_2016_pbo_930048463_and_npo_134_861">© Feeding the Furballs 2016 PBO 930048463 and NPO 134–861</string>
     <string name="please_select_a_user">Please select a user.</string>
     <string name="please_select_a_month2">Please select a month.</string>
     <string name="our_suppawters">Our Suppawters</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="disclaimer2">Disclaimer</string>
+    <string name="the_feeding_the_furballs_app_was_developed_by_techforgood_exclusively_for_feeding_the_furballs_its_purpose_is_to_support_the_ngo_in_managing_donations_fostering_community_engagement_and_sharing_information_about_their_mission_to_help_homeless_animals_in_south_africa">The Feeding the Furballs app was developed by TechForGood exclusively for Feeding the Furballs. Its purpose is to support the NGO in managing donations, fostering community engagement, and sharing information about their mission to help homeless animals in South Africa.</string>
+    <string name="intellectual_property_ownership">Intellectual Property Ownership</string>
+    <string name="the_app_s_features_including_but_not_limited_to_the_donation_goals_tracker_gallery_admin_controls_and_all_user_interactions_are_proprietary_to_techforgood_and_feeding_the_furballs_and_are_uniquely_designed_to_meet_the_organization_s_needs_any_duplication_or_unauthorized_use_of_these_features_is_strictly_prohibited">The app’s features, including but not limited to the Donation Goals Tracker, Gallery, Admin Controls, and all user interactions, are proprietary to TechForGood and Feeding the Furballs and are uniquely designed to meet the organization’s needs. Any duplication or unauthorized use of these features is strictly prohibited.</string>
+    <string name="data_privacy">Data Privacy</string>
+    <string name="user_data_collected_within_this_app_is_handled_with_confidentiality_in_compliance_with_the_protection_of_personal_information_act_popia_users_are_responsible_for_the_accuracy_of_information_they_provide">User data collected within this app is handled with confidentiality, in compliance with the Protection of Personal Information Act (POPIA). Users are responsible for the accuracy of information they provide.</string>
+    <string name="user_conduct">User Conduct</string>
+    <string name="users_agree_to_use_the_app_responsibly_and_not_to_misuse_its_features_or_attempt_unauthorized_access_to_restricted_areas_misuse_may_result_in_access_restrictions">Users agree to use the app responsibly and not to misuse its features or attempt unauthorized access to restricted areas. Misuse may result in access restrictions.</string>
+    <string name="modification_rights">Modification Rights</string>
+    <string name="techforgood_reserves_the_right_to_modify_or_update_features_terms_or_content_within_the_app_as_necessary_to_maintain_quality_and_functionality">TechForGood reserves the right to modify or update features, terms, or content within the app as necessary to maintain quality and functionality.</string>
+    <string name="limitation_of_liability">Limitation of Liability</string>
+    <string name="while_designed_for_accuracy_and_reliability_techforgood_and_feeding_the_furballs_are_not_liable_for_temporary_outages_data_inaccuracies_or_any_loss_of_functionality_by_using_this_app_you_agree_to_respect_its_intellectual_property_and_terms_of_use">While designed for accuracy and reliability, TechForGood and Feeding the Furballs are not liable for temporary outages, data inaccuracies, or any loss of functionality. By using this app, you agree to respect its intellectual property and terms of use.</string>
+    <string name="go_to_popi_act">Go to POPI Act</string>
 
     <string-array name="navigation_spinner">
         <item>Home</item>
@@ -73,7 +87,7 @@
         <item>Gallery</item>
         <item>Donation Goal</item>
         <item>Contact Us</item>
-        <item>POPIA</item>
+        <item>Disclaimer</item>
         <item>Admin Login</item>
     </string-array>
 
