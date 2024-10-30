@@ -17,6 +17,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # List the root directory contents to check the structure
+      - name: List root directory contents
+        run: ls -la
+
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
@@ -29,11 +33,11 @@ jobs:
           api-level: 34
           build-tools: '34.0.0'
 
-      # Make gradlew executable
+      # Make gradlew executable if path is verified
       - name: Make gradlew executable
         run: chmod +x FeedingTheFurballs/gradlew
 
-      # Build the APK
+      # Build the APK if path is verified
       - name: Build APK
         working-directory: FeedingTheFurballs
         run: ./gradlew assembleRelease
