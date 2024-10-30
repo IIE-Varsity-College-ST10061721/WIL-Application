@@ -1,0 +1,43 @@
+# .github/workflows/build_apk.yml
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main
+      - Dillon
+      - Luke
+      - Aphiwe  # Specify all relevant branches for building
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'  # Use Java 17 as specified
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          api-level: 34
+          build-tools: '34.0.0'
+
+      - name: Make gradlew executable
+        run: chmod +x FeedingTheFurballs/gradlew
+
+      - name: Build APK
+        working-directory: FeedingTheFurballs  # Update to your app's directory
+        run: ./gradlew assembleRelease
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-release.apk
+          path: FeedingTheFurballs/app/build/outputs/apk/release/app-release.apk
