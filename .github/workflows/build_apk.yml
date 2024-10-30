@@ -31,15 +31,15 @@ jobs:
 
       # List directory contents for troubleshooting
       - name: List directory contents
-        run: ls -la Application/FeedingTheFurballs
+        run: ls -la FeedingTheFurballs
 
       # Make gradlew executable
       - name: Make gradlew executable
-        run: chmod +x Application/FeedingTheFurballs/gradlew
+        run: chmod +x FeedingTheFurballs/gradlew
 
       # Build the APK
       - name: Build APK
-        working-directory: Application/FeedingTheFurballs
+        working-directory: FeedingTheFurballs
         run: ./gradlew assembleRelease
 
       # Upload the APK as an artifact
@@ -47,4 +47,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app-release.apk
-          path: Application/FeedingTheFurballs/app/build/outputs/apk/release/app-release.apk
+          path: FeedingTheFurballs/app/build/outputs/apk/release/app-release.apk
