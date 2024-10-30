@@ -1,5 +1,5 @@
-# .github/workflows/debug_directory.yml
-name: Debug Directory Structure
+# .github/workflows/build_apk.yml
+name: Build APK
 
 on:
   push:
@@ -10,13 +10,37 @@ on:
       - Aphiwe  # Specify all relevant branches for building
 
 jobs:
-  debug:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # List the root directory contents to understand the actual structure
-      - name: List root directory contents
-        run: ls -laR  # List all files and subdirectories recursively
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          api-level: 34
+          build-tools: '34.0.0'
+
+      # Make gradlew executable
+      - name: Make gradlew executable
+        run: chmod +x FeedingTheFurballs/gradlew
+
+      # Build the APK
+      - name: Build APK
+        working-directory: FeedingTheFurballs
+        run: ./gradlew assembleRelease
+
+      # Upload the APK as an artifact
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-release.apk
+          path: FeedingTheFurballs/app/build/outputs/apk/release/app-release.apk
