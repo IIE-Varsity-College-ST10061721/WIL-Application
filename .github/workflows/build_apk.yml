@@ -29,13 +29,16 @@ jobs:
           api-level: 34
           build-tools: '34.0.0'
 
+      # Ensure gradlew is executable
       - name: Make gradlew executable
-        run: chmod +x Application/FeedingTheFurballs/gradlew  # Corrected path
+        run: chmod +x Application/FeedingTheFurballs/gradlew
 
+      # Build the APK
       - name: Build APK
-        working-directory: Application/FeedingTheFurballs  # Set the correct working directory
+        working-directory: Application/FeedingTheFurballs
         run: ./gradlew assembleRelease
 
+      # Upload the APK as an artifact
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
