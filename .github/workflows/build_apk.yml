@@ -4,10 +4,7 @@ name: Build APK
 on:
   push:
     branches:
-      - main
-      - Dillon
-      - Luke
-      - Aphiwe  # Specify all relevant branches for building
+      - Dillon  # Only builds on the Dillon branch
 
 jobs:
   build:
@@ -16,10 +13,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      # List the root directory contents to understand the actual structure
-      - name: List root directory contents
-        run: ls -laR  # List all files and subdirectories recursively
+        with:
+          ref: Dillon  # Ensures checkout of the Dillon branch
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -33,11 +28,11 @@ jobs:
           api-level: 34
           build-tools: '34.0.0'
 
-      # Make gradlew executable if path is verified
+      # Make gradlew executable
       - name: Make gradlew executable
         run: chmod +x FeedingTheFurballs/gradlew
 
-      # Build the APK if path is verified
+      # Build the APK
       - name: Build APK
         working-directory: FeedingTheFurballs
         run: ./gradlew assembleRelease
