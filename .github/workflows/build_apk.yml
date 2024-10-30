@@ -29,17 +29,21 @@ jobs:
           api-level: 34
           build-tools: '34.0.0'
 
-      # List directory contents for troubleshooting
-      - name: List directory contents
-        run: ls -la FeedingTheFurballs
+      # List root directory contents to determine structure
+      - name: List root directory contents
+        run: ls -la
 
-      # Make gradlew executable
+      # List contents of the Application folder to verify structure
+      - name: List Application directory contents
+        run: ls -la Application
+
+      # Make gradlew executable if path is verified
       - name: Make gradlew executable
-        run: chmod +x FeedingTheFurballs/gradlew
+        run: chmod +x Application/FeedingTheFurballs/gradlew
 
-      # Build the APK
+      # Build the APK if path is verified
       - name: Build APK
-        working-directory: FeedingTheFurballs
+        working-directory: Application/FeedingTheFurballs
         run: ./gradlew assembleRelease
 
       # Upload the APK as an artifact
@@ -47,4 +51,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app-release.apk
-          path: FeedingTheFurballs/app/build/outputs/apk/release/app-release.apk
+          path: Application/FeedingTheFurballs/app/build/outputs/apk/release/app-release.apk
