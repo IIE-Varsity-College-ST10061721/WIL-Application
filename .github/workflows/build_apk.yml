@@ -1,9 +1,13 @@
+# .github/workflows/build_apk.yml
 name: Build APK
 
 on:
   push:
     branches:
-      - main  
+      - main
+      - Dillon
+      - Luke
+      - Aphiwe  # Specify all relevant branches for building
 
 jobs:
   build:
@@ -17,7 +21,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
-          java-version: '17' 
+          java-version: '17'
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
@@ -25,15 +29,22 @@ jobs:
           api-level: 34
           build-tools: '34.0.0'
 
-      - name: Make gradlew executable
-        run: chmod +x FeedingTheFurballs/gradlew
+      # List directory contents for troubleshooting
+      - name: List directory contents
+        run: ls -la Application/FeedingTheFurballs
 
+      # Make gradlew executable
+      - name: Make gradlew executable
+        run: chmod +x Application/FeedingTheFurballs/gradlew
+
+      # Build the APK
       - name: Build APK
-        working-directory: FeedingTheFurballs
+        working-directory: Application/FeedingTheFurballs
         run: ./gradlew assembleRelease
 
+      # Upload the APK as an artifact
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
           name: app-release.apk
-          path: FeedingTheFurballs/app/build/outputs/apk/release/app-release.apk
+          path: Application/FeedingTheFurballs/app/build/outputs/apk/release/app-release.apk
