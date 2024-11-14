@@ -29,10 +29,15 @@ jobs:
           api-level: 30
           build-tools: '30.0.3'
 
+      # Grant execute permissions to gradlew
+      - name: Set execute permissions for gradlew
+        run: chmod +x ./gradlew
+        working-directory: FeedingTheFurballs  # Ensure we are in the correct directory
+
       # Build APK
       - name: Build Debug APK
         run: ./gradlew assembleDebug
-        working-directory: FeedingTheFurballs  # Corrected path
+        working-directory: FeedingTheFurballs
 
       # Lint Check
       - name: Run Lint Check
