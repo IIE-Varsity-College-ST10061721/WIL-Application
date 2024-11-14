@@ -29,23 +29,19 @@ jobs:
           api-level: 30
           build-tools: '30.0.3'
 
-      # Navigate to the project directory
-      - name: Navigate to project directory
-        run: cd Application/FeedingTheFurballs
-
       # Build APK
       - name: Build Debug APK
         run: ./gradlew assembleDebug
-        working-directory: Application/FeedingTheFurballs  # Ensure the correct path to gradlew
+        working-directory: FeedingTheFurballs  # Corrected path
 
       # Lint Check
       - name: Run Lint Check
         run: ./gradlew lint
-        working-directory: Application/FeedingTheFurballs
+        working-directory: FeedingTheFurballs
 
       # Upload APK Artifact for Debugging/Testing
       - name: Upload Debug APK
         uses: actions/upload-artifact@v3
         with:
           name: debug-apk
-          path: Application/FeedingTheFurballs/app/build/outputs/apk/debug/*.apk
+          path: FeedingTheFurballs/app/build/outputs/apk/debug/*.apk
