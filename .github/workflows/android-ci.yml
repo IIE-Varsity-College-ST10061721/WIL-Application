@@ -1,6 +1,5 @@
 name: Android CI
 
-# Trigger workflow on push or pull request events
 on:
   push:
     branches:
@@ -13,8 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    # Setup Gradle and Java for Android builds
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -40,7 +38,7 @@ jobs:
 
       # Upload APK Artifact for Debugging/Testing
       - name: Upload Debug APK
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: debug-apk
           path: app/build/outputs/apk/debug/*.apk
