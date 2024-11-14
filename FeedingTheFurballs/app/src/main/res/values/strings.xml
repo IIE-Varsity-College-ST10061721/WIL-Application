@@ -61,6 +61,7 @@
     <string name="debit_order_form">Debit Order Form</string>
     <string name="paypal">PayPal</string>
     <string name="zapper">Zapper</string>
+<<<<<<< Updated upstream
     <string name="feeding_the_furballs_2016_pbo_930048463_and_npo_134_861">© Feeding the Furballs 2016 PBO 930048463 and NPO 134–861</string>
     <string name="please_select_a_user">Please select a user.</string>
     <string name="please_select_a_month2">Please select a month.</string>
@@ -79,6 +80,12 @@
     <string name="limitation_of_liability">Limitation of Liability</string>
     <string name="while_designed_for_accuracy_and_reliability_techforgood_and_feeding_the_furballs_are_not_liable_for_temporary_outages_data_inaccuracies_or_any_loss_of_functionality_by_using_this_app_you_agree_to_respect_its_intellectual_property_and_terms_of_use">While designed for accuracy and reliability, TechForGood and Feeding the Furballs are not liable for temporary outages, data inaccuracies, or any loss of functionality. By using this app, you agree to respect its intellectual property and terms of use.</string>
     <string name="go_to_popi_act">Go to POPI Act</string>
+=======
+    <string name="feeding_the_furballs_2016_pbo_930048463_and_npo_134_861">© Feeding the Furballs 2016 PBO 930048463 and NPO 134-861</string>
+    <string name="please_select_a_user">Please select a user.</string>
+    <string name="please_select_a_month2">Please select a month.</string>
+    <string name="our_suppawters">Our Suppawters</string>
+>>>>>>> Stashed changes
 
     <string-array name="navigation_spinner">
         <item>Home</item>
@@ -87,7 +94,11 @@
         <item>Gallery</item>
         <item>Donation Goal</item>
         <item>Contact Us</item>
+<<<<<<< Updated upstream
         <item>Disclaimer</item>
+=======
+        <item>POPIA</item>
+>>>>>>> Stashed changes
         <item>Admin Login</item>
     </string-array>
 

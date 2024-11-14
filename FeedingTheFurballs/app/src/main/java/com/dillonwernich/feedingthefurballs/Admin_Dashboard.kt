@@ -1,5 +1,6 @@
 package com.dillonwernich.feedingthefurballs
 
+<<<<<<< Updated upstream
 // Import necessary Android components and libraries
 import android.Manifest                // Provides access to constant values representing Android permissions
 import android.content.Intent          // Used for navigation between activities
@@ -18,10 +19,27 @@ class Admin_Dashboard : AppCompatActivity() {
 
     // Declare buttons for managing gallery, donations, and donation goals
     // These buttons will navigate the admin to different sections of the admin dashboard
+=======
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
+import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+
+class Admin_Dashboard : AppCompatActivity() {
+
+    // Declare buttons for managing gallery, donations, and donation goals
+>>>>>>> Stashed changes
     private lateinit var manageGallery: Button
     private lateinit var manageDonations: Button
     private lateinit var manageDonationGoal: Button
 
+<<<<<<< Updated upstream
     // Request code for storage permission (used to identify permission request result)
     private val READ_MEDIA_IMAGES_REQUEST_CODE = 1001  // Constant to track permission request result
 
@@ -39,10 +57,21 @@ class Admin_Dashboard : AppCompatActivity() {
 
         // Initialize buttons by finding them in the layout using their respective IDs
         // This connects the buttons in the layout to the variables in the code
+=======
+    // Request code for storage permission
+    private val READ_MEDIA_IMAGES_REQUEST_CODE = 1001
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_admin_dashboard)
+
+        // Initialize buttons
+>>>>>>> Stashed changes
         manageGallery = findViewById(R.id.manage_gallery_button)
         manageDonations = findViewById(R.id.manage_item_donations_button)
         manageDonationGoal = findViewById(R.id.manage_monthly_goal_button)
 
+<<<<<<< Updated upstream
         // Set click listener for the "Manage Gallery" button
         // Clicking this button checks if the app has the necessary permission to access storage for managing the gallery
         manageGallery.setOnClickListener {
@@ -73,20 +102,58 @@ class Admin_Dashboard : AppCompatActivity() {
         } else {
             // If permission is not granted, request the necessary storage permission from the user
             requestStoragePermission()  // Ask the user for permission to access the gallery
+=======
+        // Set click listener for the manageGallery button
+        manageGallery.setOnClickListener {
+            checkStoragePermissionAndOpenGallery()
+        }
+
+        // Set click listener for the manageDonations button to open the Admin_Item_Donations activity
+        manageDonations.setOnClickListener {
+            val intent = Intent(this, Admin_Item_Donations::class.java)
+            startActivity(intent)
+        }
+
+        // Set click listener for the manageDonationGoal button to open the Admin_Donation_Goal activity
+        manageDonationGoal.setOnClickListener {
+            val intent = Intent(this, Admin_Donation_Goal::class.java)
+            startActivity(intent)
+        }
+    }
+
+    // Function to check storage permission and open the gallery activity if granted
+    private fun checkStoragePermissionAndOpenGallery() {
+        if (isStoragePermissionGranted()) {
+            // Permission is already granted, open the gallery
+            openGallery()
+        } else {
+            // Permission is not granted, request it
+            requestStoragePermission()
+>>>>>>> Stashed changes
         }
     }
 
     // Function to check if storage permission is granted
+<<<<<<< Updated upstream
     // Returns true if the permission is granted, false otherwise
     private fun isStoragePermissionGranted(): Boolean {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             // For Android 13+ (API level 33), the permission used for media access is READ_MEDIA_IMAGES
+=======
+    private fun isStoragePermissionGranted(): Boolean {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            // For Android 13+ (API level 33)
+>>>>>>> Stashed changes
             ContextCompat.checkSelfPermission(
                 this,
                 Manifest.permission.READ_MEDIA_IMAGES
             ) == PackageManager.PERMISSION_GRANTED
         } else {
+<<<<<<< Updated upstream
             // For devices below Android 13, the permission used is READ_EXTERNAL_STORAGE
+=======
+            // For devices below Android 13
+>>>>>>> Stashed changes
             ContextCompat.checkSelfPermission(
                 this,
                 Manifest.permission.READ_EXTERNAL_STORAGE
@@ -94,6 +161,7 @@ class Admin_Dashboard : AppCompatActivity() {
         }
     }
 
+<<<<<<< Updated upstream
     // Function to request storage permission from the user
     // Requests the correct permission based on the Android version the device is running
     private fun requestStoragePermission() {
@@ -110,11 +178,29 @@ class Admin_Dashboard : AppCompatActivity() {
                 this,
                 arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),  // Permission for external storage access
                 READ_MEDIA_IMAGES_REQUEST_CODE  // Request code to handle the result
+=======
+    // Function to request storage permission
+    private fun requestStoragePermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            // For Android 13+ (API level 33)
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.READ_MEDIA_IMAGES),
+                READ_MEDIA_IMAGES_REQUEST_CODE
+            )
+        } else {
+            // For devices below Android 13
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                READ_MEDIA_IMAGES_REQUEST_CODE
+>>>>>>> Stashed changes
             )
         }
     }
 
     // Handle the result of the permission request
+<<<<<<< Updated upstream
     // This function is called when the user responds to the permission request dialog
     override fun onRequestPermissionsResult(
         requestCode: Int,  // The request code used to identify the permission request
@@ -128,6 +214,19 @@ class Admin_Dashboard : AppCompatActivity() {
                 openGallery()  // Open the gallery if the permission is granted
             } else {
                 // If the permission was denied, show a Toast message to inform the user
+=======
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        if (requestCode == READ_MEDIA_IMAGES_REQUEST_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted, open the gallery
+                openGallery()
+            } else {
+                // Permission denied
+>>>>>>> Stashed changes
                 Toast.makeText(
                     this,
                     "Permission denied to access the gallery.",
@@ -135,15 +234,24 @@ class Admin_Dashboard : AppCompatActivity() {
                 ).show()
             }
         } else {
+<<<<<<< Updated upstream
             // If the request code doesn't match, pass it to the superclass
+=======
+>>>>>>> Stashed changes
             super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         }
     }
 
     // Function to open the Admin_Gallery activity
+<<<<<<< Updated upstream
     // This will allow the admin to manage images in the gallery section
     private fun openGallery() {
         val intent = Intent(this, Admin_Gallery::class.java)
         startActivity(intent)  // Start the Admin_Gallery activity
+=======
+    private fun openGallery() {
+        val intent = Intent(this, Admin_Gallery::class.java)
+        startActivity(intent)
+>>>>>>> Stashed changes
     }
 }

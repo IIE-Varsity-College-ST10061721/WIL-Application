@@ -1,5 +1,6 @@
 package com.dillonwernich.feedingthefurballs
 
+<<<<<<< Updated upstream
 // Import statements for necessary Android components
 import android.content.Intent           // Used to create and launch a new activity
 import android.os.Bundle               // Bundle is used to pass data between activities
@@ -43,5 +44,29 @@ class Splash_Screen : AppCompatActivity() {
             // This is done to ensure that the splash screen is shown only once during app startup
             finish()
         }, splashScreenDuration)  // The delay is specified here (5 seconds)
+=======
+import android.content.Intent
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
+
+class Splash_Screen : AppCompatActivity() {
+
+    // Duration for the splash screen (in milliseconds)
+    private val splashScreenDuration: Long = 5000
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_splash_screen)
+
+        // Post a delayed task to navigate to MainActivity after the splash screen duration
+        Handler(Looper.getMainLooper()).postDelayed({
+            // Create an intent to navigate to MainActivity
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)  // Start the MainActivity
+            finish()  // Finish the Splash_Screen activity to prevent going back to it
+        }, splashScreenDuration)
+>>>>>>> Stashed changes
     }
 }

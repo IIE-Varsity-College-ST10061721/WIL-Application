@@ -12,8 +12,13 @@ android {
         applicationId = "com.dillonwernich.feedingthefurballs"
         minSdk = 27
         targetSdk = 34
-        versionCode = 7
-        versionName = "7.0"
+<<<<<<< Updated upstream
+        versionCode = 8
+        versionName = "8.0"
+=======
+        versionCode = 1
+        versionName = "1.0"
+>>>>>>> Stashed changes
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
