@@ -1,6 +1,5 @@
 package com.dillonwernich.feedingthefurballs
 
-<<<<<<< Updated upstream
 // Import necessary Android components and Firebase libraries
 import android.app.Dialog                // Used to display images in fullscreen mode in a dialog
 import android.app.ProgressDialog        // Used to show a loading dialog while images are being fetched
@@ -49,30 +48,6 @@ class Gallery : AppCompatActivity() {
 
         // Initialize the ImageViews by referencing them from the layout
         // These ImageViews will hold and display the images loaded from Firebase storage
-=======
-import android.app.Dialog
-import android.os.Bundle
-import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
-
-class Gallery : AppCompatActivity() {
-
-    // Declare an array of ImageViews for the gallery
-    private lateinit var imageViews: Array<ImageView>
-
-    // Firebase storage reference to the "images" folder
-    private val storageReference: StorageReference = FirebaseStorage.getInstance().reference.child("images")
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gallery)
-
-        // Initialize all ImageViews by referencing them from the layout
->>>>>>> Stashed changes
         imageViews = arrayOf(
             findViewById(R.id.gallery1),
             findViewById(R.id.gallery2),
@@ -124,7 +99,6 @@ class Gallery : AppCompatActivity() {
             findViewById(R.id.gallery48)
         )
 
-<<<<<<< Updated upstream
         // Show the ProgressDialog to inform the user that the images are loading
         progressDialog.show()
 
@@ -137,21 +111,11 @@ class Gallery : AppCompatActivity() {
         for (imageView in imageViews) {
             imageView.setOnClickListener {
                 showFullScreenImage(imageView)  // Function to display the tapped image in fullscreen
-=======
-        // Load the images from Firebase storage into the ImageViews
-        loadImages()
-
-        // Set up click listeners for each ImageView to display images fullscreen
-        for (imageView in imageViews) {
-            imageView.setOnClickListener {
-                showFullScreenImage(imageView)
->>>>>>> Stashed changes
             }
         }
     }
 
     // Function to load images from Firebase storage
-<<<<<<< Updated upstream
     // This function fetches the images from the Firebase storage and displays them in the gallery's ImageViews
     private fun loadImages() {
         // List all items (images) in the "images" folder of Firebase storage
@@ -165,21 +129,10 @@ class Gallery : AppCompatActivity() {
                 val itemCount = sortedItems.size.coerceAtMost(imageViews.size)
 
                 // Loop through the sorted list of image references and load them into the corresponding ImageViews
-=======
-    private fun loadImages() {
-        storageReference.listAll()
-            .addOnSuccessListener { listResult ->
-                // Sort the images by name in descending order
-                val sortedItems = listResult.items.sortedByDescending { it.name }
-                // Ensure the number of items does not exceed the number of available ImageViews
-                val itemCount = sortedItems.size.coerceAtMost(imageViews.size)
-
->>>>>>> Stashed changes
                 for (i in 0 until itemCount) {
                     val imageRef = sortedItems[i]
                     val imageView = imageViews[i]
 
-<<<<<<< Updated upstream
                     // Get the download URL of the image from Firebase storage and load it into the ImageView
                     imageRef.downloadUrl
                         .addOnSuccessListener { uri ->
@@ -231,58 +184,12 @@ class Gallery : AppCompatActivity() {
         }
 
         // Set the dialog to match the screen size (fullscreen mode)
-=======
-                    // Download the image URL and load it into the ImageView
-                    imageRef.downloadUrl
-                        .addOnSuccessListener { uri ->
-                            // Store the image URL in the ImageView's tag for later use
-                            imageView.tag = uri.toString()
-
-                            // Use Glide to load the image into the ImageView
-                            Glide.with(this@Gallery)
-                                .load(uri)
-                                .into(imageView)
-                        }
-                        .addOnFailureListener {
-                            // Handle image loading failure
-                        }
-                }
-            }
-            .addOnFailureListener {
-                // Handle Firebase storage listing failure
-            }
-    }
-
-    // Function to display an image in fullscreen mode
-    private fun showFullScreenImage(imageView: ImageView) {
-        val dialog = Dialog(this)
-        dialog.setContentView(R.layout.dialog_image_fullscreen)
-
-        val fullScreenImageView: ImageView = dialog.findViewById(R.id.fullscreen_image)
-
-        // Retrieve the image URL from the ImageView's tag
-        val imageUrl = imageView.tag as? String
-
-        if (imageUrl != null) {
-            // Use Glide to load the image into the fullscreen ImageView
-            Glide.with(this)
-                .load(imageUrl)
-                .into(fullScreenImageView)
-        } else {
-            // Handle the case where the image URL is not available
-        }
-
-        // Set the dialog to match the screen size
->>>>>>> Stashed changes
         dialog.window?.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.MATCH_PARENT
         )
-<<<<<<< Updated upstream
 
         // Show the dialog, displaying the image in fullscreen mode
-=======
->>>>>>> Stashed changes
         dialog.show()
     }
 }

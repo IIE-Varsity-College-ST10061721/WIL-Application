@@ -1,6 +1,5 @@
 package com.dillonwernich.feedingthefurballs
 
-<<<<<<< Updated upstream
 // Import statements for necessary Android components
 import android.content.Intent             // Used to create and launch a new activity
 import androidx.appcompat.app.AppCompatActivity  // Base class for activities with support for modern Android features
@@ -32,29 +31,10 @@ class How_Can_You_Help : AppCompatActivity() {
 
         // Initialize the buttons by finding them in the layout using their respective IDs
         // This connects the Button variables to the actual Button UI elements in the XML layout
-=======
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.Button
-
-class How_Can_You_Help : AppCompatActivity() {
-
-    // Declare buttons for monetary and item donations
-    private lateinit var monetaryDonations: Button
-    private lateinit var itemDonations: Button
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_how_can_you_help)
-
-        // Initialize buttons
->>>>>>> Stashed changes
         monetaryDonations = findViewById(R.id.monetary_donations_button)
         itemDonations = findViewById(R.id.item_donations_button)
 
         // Set up click listener for the monetary donations button
-<<<<<<< Updated upstream
         // This listener will trigger when the user clicks on the button
         monetaryDonations.setOnClickListener {
             // Create an Intent to start the Monetary_Donations activity when the button is clicked
@@ -70,19 +50,6 @@ class How_Can_You_Help : AppCompatActivity() {
             // The user will be redirected to a new screen where they can donate items
             val intent = Intent(this, Item_Donations::class.java)
             startActivity(intent)  // Start the Item_Donations activity
-=======
-        monetaryDonations.setOnClickListener {
-            // Open the Monetary_Donations activity
-            val intent = Intent(this, Monetary_Donations::class.java)
-            startActivity(intent)
-        }
-
-        // Set up click listener for the item donations button
-        itemDonations.setOnClickListener {
-            // Open the Item_Donations activity
-            val intent = Intent(this, Item_Donations::class.java)
-            startActivity(intent)
->>>>>>> Stashed changes
         }
     }
 }

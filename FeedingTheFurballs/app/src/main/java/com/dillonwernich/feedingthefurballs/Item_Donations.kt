@@ -1,9 +1,6 @@
 package com.dillonwernich.feedingthefurballs
 
-<<<<<<< Updated upstream
 // Import necessary Android components and Firebase libraries
-=======
->>>>>>> Stashed changes
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -16,7 +13,6 @@ import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import android.app.AlertDialog
-<<<<<<< Updated upstream
 import androidx.appcompat.app.AppCompatDelegate
 import java.util.regex.Pattern
 
@@ -53,32 +49,6 @@ class Item_Donations : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().reference
 
         // Initialize UI components by finding their respective views in the layout
-=======
-import java.util.regex.Pattern
-
-class Item_Donations : AppCompatActivity() {
-
-    // Firebase database reference
-    private lateinit var database: DatabaseReference
-
-    // UI elements
-    private lateinit var generalItemsSpinner: Spinner
-    private lateinit var otherItemsSpinner: Spinner
-    private lateinit var nameSurnameField: EditText
-    private lateinit var selectedItemField: EditText
-    private lateinit var contactNumberField: EditText
-    private lateinit var emailAddressField: EditText
-    private lateinit var sendRequestButton: Button
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_item_donations)
-
-        // Initialize Firebase database reference
-        database = FirebaseDatabase.getInstance().reference
-
-        // Initialize UI elements
->>>>>>> Stashed changes
         generalItemsSpinner = findViewById(R.id.general_items_spinner)
         otherItemsSpinner = findViewById(R.id.other_items_spinner)
         nameSurnameField = findViewById(R.id.name_and_surname)
@@ -88,7 +58,6 @@ class Item_Donations : AppCompatActivity() {
         sendRequestButton = findViewById(R.id.send_request_button)
 
         // Disable manual input for the selected item field
-<<<<<<< Updated upstream
         // The selected item will be determined by the spinners, so the field is not manually editable
         selectedItemField.isFocusable = false
         selectedItemField.isClickable = false
@@ -107,26 +76,10 @@ class Item_Donations : AppCompatActivity() {
             // If the form is valid, save the data to Firebase
             if (validateForm()) {
                 saveDataToFirebase()  // Save data only if all inputs are valid
-=======
-        selectedItemField.isFocusable = false
-        selectedItemField.isClickable = false
-
-        // Set up adapters for spinners
-        setupSpinnerAdapters()
-
-        // Set up item selected listeners for spinners
-        setupSpinnerListeners()
-
-        // Handle send request button click
-        sendRequestButton.setOnClickListener {
-            if (validateForm()) {
-                saveDataToFirebase()  // Only save to Firebase if validation passes
->>>>>>> Stashed changes
             }
         }
     }
 
-<<<<<<< Updated upstream
     // Set up adapters for the spinners to display available donation items
     // Adapters connect the spinner to the array of items defined in resources
     private fun setupSpinnerAdapters() {
@@ -161,42 +114,11 @@ class Item_Donations : AppCompatActivity() {
                     selectedItemField.setText(selectedItem)  // Update the selected item field
 
                     // Reset the other items spinner to its default position
-=======
-    // Set up adapters for the general items and other items spinners
-    private fun setupSpinnerAdapters() {
-        val generalAdapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.general_items,
-            android.R.layout.simple_spinner_item
-        )
-        generalAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        generalItemsSpinner.adapter = generalAdapter
-
-        val otherAdapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.other_items,
-            android.R.layout.simple_spinner_item
-        )
-        otherAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        otherItemsSpinner.adapter = otherAdapter
-    }
-
-    // Set up item selected listeners for both spinners
-    private fun setupSpinnerListeners() {
-        generalItemsSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (position != 0) {
-                    val selectedItem = parent?.getItemAtPosition(position).toString()
-                    selectedItemField.setText(selectedItem)
-
-                    // Reset the other spinner
->>>>>>> Stashed changes
                     otherItemsSpinner.setSelection(0)
                 }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-<<<<<<< Updated upstream
                 // No action needed when nothing is selected
             }
         }
@@ -210,34 +132,16 @@ class Item_Donations : AppCompatActivity() {
                     selectedItemField.setText(selectedItem)  // Update the selected item field
 
                     // Reset the general items spinner to its default position
-=======
-                // No action needed
-            }
-        }
-
-        otherItemsSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (position != 0) {
-                    val selectedItem = parent?.getItemAtPosition(position).toString()
-                    selectedItemField.setText(selectedItem)
-
-                    // Reset the general items spinner
->>>>>>> Stashed changes
                     generalItemsSpinner.setSelection(0)
                 }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-<<<<<<< Updated upstream
                 // No action needed when nothing is selected
-=======
-                // No action needed
->>>>>>> Stashed changes
             }
         }
     }
 
-<<<<<<< Updated upstream
     // Validate the form fields to ensure all required inputs are correct
     // If validation fails, error messages will be displayed next to the invalid fields
     private fun validateForm(): Boolean {
@@ -289,61 +193,10 @@ class Item_Donations : AppCompatActivity() {
     // This method stores the user's donation request in the Firebase database
     private fun saveDataToFirebase() {
         val nameSurname = nameSurnameField.text.toString().trim()  // Retrieve user inputs
-=======
-    // Validate the form fields
-    private fun validateForm(): Boolean {
-        val nameSurname = nameSurnameField.text.toString().trim()
         val selectedItem = selectedItemField.text.toString().trim()
         val contactNumber = contactNumberField.text.toString().trim()
         val emailAddress = emailAddressField.text.toString().trim()
 
-        var isValid = true
-
-        // Check if the name field is empty
-        if (nameSurname.isEmpty()) {
-            nameSurnameField.error = "Name and surname are required"
-            isValid = false
-        }
-
-        // Check if an item is selected
-        if (selectedItem.isEmpty() || selectedItem == "Please Select an Item") {
-            selectedItemField.error = "Please select an item"
-            isValid = false
-        }
-
-        // Check if the contact number field is empty or invalid
-        if (contactNumber.isEmpty()) {
-            contactNumberField.error = "Contact number is required"
-            isValid = false
-        } else if (contactNumber.length != 10) {
-            contactNumberField.error = "Invalid contact number"
-            isValid = false
-        }
-
-        // Check if the email field is empty or invalid
-        if (emailAddress.isEmpty()) {
-            emailAddressField.error = "Email address is required"
-            isValid = false
-        } else {
-            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
-            if (!Pattern.matches(emailPattern, emailAddress)) {
-                emailAddressField.error = "Invalid email address"
-                isValid = false
-            }
-        }
-
-        return isValid
-    }
-
-    // Save the validated data to Firebase
-    private fun saveDataToFirebase() {
-        val nameSurname = nameSurnameField.text.toString().trim()
->>>>>>> Stashed changes
-        val selectedItem = selectedItemField.text.toString().trim()
-        val contactNumber = contactNumberField.text.toString().trim()
-        val emailAddress = emailAddressField.text.toString().trim()
-
-<<<<<<< Updated upstream
         // Create a DonationRequest object with the user's input data
         val donationRequest = DonationRequest(nameSurname, selectedItem, contactNumber, emailAddress)
 
@@ -351,35 +204,20 @@ class Item_Donations : AppCompatActivity() {
         val requestId = database.child("donations").push().key
         if (requestId != null) {
             // Save the donation request data under the generated ID
-=======
-        val donationRequest = DonationRequest(nameSurname, selectedItem, contactNumber, emailAddress)
-
-        val requestId = database.child("donations").push().key
-        if (requestId != null) {
->>>>>>> Stashed changes
             database.child("donations").child(requestId).setValue(donationRequest)
                 .addOnSuccessListener {
                     // Show success message after data is saved successfully
                     Toast.makeText(this, "Request sent successfully!", Toast.LENGTH_SHORT).show()
-<<<<<<< Updated upstream
                     showConfirmationDialog()  // Show confirmation dialog to the user
                     resetFields()  // Clear all fields after successful submission
                 }
                 .addOnFailureListener {
                     // Handle any failure in saving data (e.g., network issues)
-=======
-                    showConfirmationDialog() // Show confirmation dialog
-                    resetFields() // Reset the fields after successful save
-                }
-                .addOnFailureListener {
-                    // Handle any failure in saving data
->>>>>>> Stashed changes
                     Toast.makeText(this, "Failed to send request!", Toast.LENGTH_SHORT).show()
                 }
         }
     }
 
-<<<<<<< Updated upstream
     // Show a confirmation dialog to the user after a successful request submission
     private fun showConfirmationDialog() {
         val builder = AlertDialog.Builder(this)  // Create an AlertDialog builder
@@ -408,34 +246,5 @@ class Item_Donations : AppCompatActivity() {
         val item: String,   // Item being donated
         val contact: String,  // Donor's contact number
         val email: String   // Donor's email address
-=======
-    // Show confirmation dialog
-    private fun showConfirmationDialog() {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Confirmation Message")
-        builder.setMessage("Farrah from Feeding The Furballs will be in contact with you shortly.")
-        builder.setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-
-        val dialog = builder.create()
-        dialog.show()
-    }
-
-    // Reset all fields after the request is sent
-    private fun resetFields() {
-        nameSurnameField.text.clear()
-        selectedItemField.text.clear()
-        contactNumberField.text.clear()
-        emailAddressField.text.clear()
-        generalItemsSpinner.setSelection(0)
-        otherItemsSpinner.setSelection(0)
-    }
-
-    // Data class to represent a donation request
-    data class DonationRequest(
-        val name: String,
-        val item: String,
-        val contact: String,
-        val email: String
->>>>>>> Stashed changes
     )
 }

@@ -1,6 +1,5 @@
 package com.dillonwernich.feedingthefurballs
 
-<<<<<<< Updated upstream
 // Import necessary Android components and libraries
 import android.content.Intent            // Used to create and launch a new activity or action
 import android.net.Uri                  // Used for handling URIs (like URLs for browser)
@@ -15,22 +14,10 @@ class Our_Suppawters : AppCompatActivity() {
 
     // Declare UI elements for social media buttons (Facebook, Twitter, TikTok)
     // These buttons provide direct access to social media pages
-=======
-import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.ImageButton
-
-class Our_Suppawters : AppCompatActivity() {
-
-    // Declare UI elements for social media buttons
->>>>>>> Stashed changes
     private lateinit var facebookButton: ImageButton
     private lateinit var twitterButton: ImageButton
     private lateinit var tiktokButton: ImageButton
 
-<<<<<<< Updated upstream
     // The onCreate method is called when the activity is first created
     // This is where we initialize the UI components and define their behavior
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,49 +33,30 @@ class Our_Suppawters : AppCompatActivity() {
 
         // Initialize buttons by finding them in the layout using their respective IDs
         // This connects the button variables to the actual ImageButton UI elements in the XML layout
-=======
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_our_suppawters)
-
-        // Initialize buttons
->>>>>>> Stashed changes
         facebookButton = findViewById(R.id.facebook_button)
         twitterButton = findViewById(R.id.twitter_button)
         tiktokButton = findViewById(R.id.tiktok_button)
 
         // Set up click listener for the Facebook button
-<<<<<<< Updated upstream
         // When the button is clicked, it opens the Feeding the Furballs Facebook page in a browser
-=======
->>>>>>> Stashed changes
         facebookButton.setOnClickListener {
             openUrl("https://www.facebook.com/feedingthefurballs/?fref=ts")  // Open Facebook link
         }
 
         // Set up click listener for the Twitter button
-<<<<<<< Updated upstream
         // When the button is clicked, it opens the Feeding the Furballs Twitter page in a browser
-=======
->>>>>>> Stashed changes
         twitterButton.setOnClickListener {
             openUrl("https://x.com/i/flow/login?redirect_after_login=%2FFeedTheFurballs")  // Open Twitter link
         }
 
         // Set up click listener for the TikTok button
-<<<<<<< Updated upstream
         // When the button is clicked, it opens the Feeding the Furballs TikTok page in a browser
         tiktokButton.setOnClickListener {
             openUrl("https://www.tiktok.com/@farrahmaharajh")  // Open TikTok link
-=======
-        tiktokButton.setOnClickListener {
-            openUrl("https://www.tiktok.com/@farrahmaharajh") //Open TikTok link
->>>>>>> Stashed changes
         }
     }
 
     // Helper function to open a URL in the browser
-<<<<<<< Updated upstream
     // This function simplifies the process of opening different URLs, reducing repetition in code
     private fun openUrl(url: String) {
         // Create an Intent to view the provided URL in a browser
@@ -97,12 +65,5 @@ class Our_Suppawters : AppCompatActivity() {
         }
         // Start the activity to open the URL in the default web browser
         startActivity(intent)
-=======
-    private fun openUrl(url: String) {
-        val intent = Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(url)  // Parse the URL
-        }
-        startActivity(intent)  // Start the intent to open the URL
->>>>>>> Stashed changes
     }
 }

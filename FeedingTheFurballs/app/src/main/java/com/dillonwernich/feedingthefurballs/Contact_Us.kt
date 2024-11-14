@@ -1,6 +1,5 @@
 package com.dillonwernich.feedingthefurballs
 
-<<<<<<< Updated upstream
 // Import necessary Android components and libraries
 import android.content.Intent             // Used to create and launch new activities (email, browser, phone)
 import android.net.Uri                   // Used for handling URIs (URLs, email addresses, phone numbers)
@@ -36,30 +35,6 @@ class Contact_Us : AppCompatActivity() {
 
         // Initialize UI elements by finding them in the layout using their respective IDs
         // This connects the buttons and text views to the actual UI elements in the XML layout
-=======
-import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.ImageButton
-import android.widget.TextView
-
-class Contact_Us : AppCompatActivity() {
-
-    // Declare UI elements for social media buttons and contact details
-    private lateinit var facebookButton: ImageButton
-    private lateinit var twitterButton: ImageButton
-    private lateinit var tiktokButton: ImageButton
-    private lateinit var farrahEmail: TextView
-    private lateinit var adminEmail: TextView
-    private lateinit var phoneNumber: TextView
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_contact_us)
-
-        // Initialize UI elements
->>>>>>> Stashed changes
         facebookButton = findViewById(R.id.facebook_button)
         twitterButton = findViewById(R.id.twitter_button)
         tiktokButton = findViewById(R.id.tiktok_button)
@@ -67,7 +42,6 @@ class Contact_Us : AppCompatActivity() {
         adminEmail = findViewById(R.id.email_details_txt)
         phoneNumber = findViewById(R.id.farrah_number_txt)
 
-<<<<<<< Updated upstream
         // Set up listeners for social media buttons to open the respective URLs in the browser
         facebookButton.setOnClickListener {
             openUrl("https://www.facebook.com/feedingthefurballs/?fref=ts")  // Open Facebook link
@@ -97,37 +71,10 @@ class Contact_Us : AppCompatActivity() {
         // Open the dialer with Farrah's phone number
         phoneNumber.setOnClickListener {
             callPhoneNumber("+27837936897")  // Predefined phone number
-=======
-        // Set up listeners for social media buttons
-        facebookButton.setOnClickListener {
-            openUrl("https://www.facebook.com/feedingthefurballs/?fref=ts")
-        }
-
-        twitterButton.setOnClickListener {
-            openUrl("https://x.com/i/flow/login?redirect_after_login=%2FFeedTheFurballs")
-        }
-
-        tiktokButton.setOnClickListener {
-            openUrl("https://www.tiktok.com/@farrahmaharajh")
-        }
-
-        // Set up listeners for emails, phone number clicks
-        farrahEmail.setOnClickListener {
-            sendEmail("farrah@feedingthefurballs.org")
-        }
-
-        adminEmail.setOnClickListener {
-            sendEmail("techforgoodgroup@gmail.com")
-        }
-
-        phoneNumber.setOnClickListener {
-            callPhoneNumber("+27837936897")
->>>>>>> Stashed changes
         }
     }
 
     // Function to open a URL in the browser
-<<<<<<< Updated upstream
     // This is used to open social media links
     private fun openUrl(url: String) {
         // Create an intent to open the specified URL in the default browser
@@ -151,24 +98,5 @@ class Contact_Us : AppCompatActivity() {
         // Create an intent to open the dialer with the "tel" scheme
         val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number"))
         startActivity(intent)  // Launch the dialer with the provided phone number
-=======
-    private fun openUrl(url: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-        startActivity(intent)
-    }
-
-    // Function to open the email client with a predefined email
-    private fun sendEmail(email: String) {
-        val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = Uri.parse("mailto:$email")
-        }
-        startActivity(intent)
-    }
-
-    // Function to open the dialer with a predefined phone number
-    private fun callPhoneNumber(number: String) {
-        val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number"))
-        startActivity(intent)
->>>>>>> Stashed changes
     }
 }

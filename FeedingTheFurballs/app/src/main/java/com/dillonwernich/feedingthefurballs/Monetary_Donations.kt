@@ -1,6 +1,5 @@
 package com.dillonwernich.feedingthefurballs
 
-<<<<<<< Updated upstream
 // Import necessary Android components and libraries
 import android.content.Intent             // Used to create and launch a new activity or action
 import android.net.Uri                   // Used for handling URIs (like URLs for browser)
@@ -34,62 +33,29 @@ class Monetary_Donations : AppCompatActivity() {
 
         // Initialize buttons by finding them in the layout using their respective IDs
         // This connects the button variables to the actual buttons in the XML layout
-=======
-import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.Button
-
-class Monetary_Donations : AppCompatActivity() {
-
-    // Declare buttons for different donation methods
-    private lateinit var debitOrderFormButton: Button
-    private lateinit var zapperButton: Button
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_monetary_donations)
-
-        // Initialize buttons
->>>>>>> Stashed changes
         debitOrderFormButton = findViewById(R.id.debit_order_form_button)
         zapperButton = findViewById(R.id.zapper_button)
 
         // Set up click listeners for each button
-<<<<<<< Updated upstream
         // This defines what happens when each button is clicked
 
         // When the debit order form button is clicked, it opens the provided URL in a browser
-=======
->>>>>>> Stashed changes
         debitOrderFormButton.setOnClickListener {
             openUrl("https://www.feedingthefurballs.org/payment-mandate.php")  // Open the debit order form link
         }
 
-<<<<<<< Updated upstream
         // When the Zapper button is clicked, it opens the provided Zapper payment URL in a browser
-=======
->>>>>>> Stashed changes
         zapperButton.setOnClickListener {
             openUrl("https://www.zapper.com/payWithZapper/?qr=http%3A%2F%2F2.zap.pe%3Ft%3D8%26i%3D18686%3A16856%3A7%5B34%7C10.00-20.00-50.00-1%7C15%2C61%3A10%5B39%7CZAR%2C38%7CFeeding%20the%20Furballs")  // Open the Zapper payment link
         }
     }
 
     // Helper function to open a URL in the browser
-<<<<<<< Updated upstream
     // This method simplifies the process of opening URLs from button clicks, keeping the code DRY (Don't Repeat Yourself)
     private fun openUrl(url: String) {
         val intent = Intent(Intent.ACTION_VIEW).apply {
             data = Uri.parse(url)  // Parse the URL into a URI format that can be opened by a browser
         }
         startActivity(intent)  // Launch the browser to open the specified URL
-=======
-    private fun openUrl(url: String) {
-        val intent = Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(url)  // Parse the URL
-        }
-        startActivity(intent)
->>>>>>> Stashed changes
     }
 }
