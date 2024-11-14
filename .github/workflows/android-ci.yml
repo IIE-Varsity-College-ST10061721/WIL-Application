@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
+          distribution: 'temurin'  # Temurin is a common choice for JDK distribution
 
       - name: Install Android SDK
         uses: android-actions/setup-android@v2
