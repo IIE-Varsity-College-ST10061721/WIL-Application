@@ -3,9 +3,9 @@ version: 2.1
 jobs:
   sonarqube_scan:
     docker:
-      - image: sonarsource/sonar-scanner-cli:latest  # Docker image with SonarQube scanner
+      - image: sonarsource/sonar-scanner-cli:latest 
     steps:
-      - checkout  # Checks out your code from GitHub
+      - checkout  
       - run:
           name: "Install Dependencies"
           command: |
